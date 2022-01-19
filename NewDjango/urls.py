@@ -20,6 +20,7 @@ from .views import home_page, about_page, contact_page, login_page, register_pag
 
 from django.conf import  settings
 from django.conf.urls.static import  static
+from users.views import user_list_view , userlistview,userDetailview,user_Detail_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +28,10 @@ urlpatterns = [
     path('about-us', about_page),
     path('contact-us', contact_page),
     path('login', login_page),
+    path('users', userlistview.as_view()),
+    path('users-fbv',user_list_view),
+    path('users/<pk>', userDetailview.as_view()),
+    path('users-fbv/<userid>', user_Detail_view),
     path('register', register_page),
 ]
 

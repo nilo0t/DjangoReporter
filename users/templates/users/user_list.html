@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <hr>
+{{ object_list }}
+<br>
+{{ is_paginated }}
+<hr>
+{%  for obj in object_list  %}
+    <p>
+    {{ obj.user_Name }}<br>{{ obj.Email }}<br>{{ obj.Mobile }}<br>{{ obj.Roll }}<br>{{ obj.create_Data }}
+    </p>
+{% endfor %}
+{% endblock %}
